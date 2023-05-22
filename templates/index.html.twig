@@ -1,0 +1,19 @@
+{% block main_container %}
+    <body>
+        <button onclick="handleClick()">
+            Click!
+        </button>
+    </body>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        async function handleClick() {
+            console.log('clicked');
+            const res = await fetch('/dynamic_media/post');
+            const resValue = await res.json();
+            console.log(resValue);
+        }
+    </script>
+{% endblock %}
