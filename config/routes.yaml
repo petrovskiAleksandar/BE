@@ -2,10 +2,11 @@ index:
    path: /
    controller: App\Controller\MediaController::index
 
-list_media:
+list_notes:
   path: list_media
   controller: App\Controller\MediaController::list
 
-dynamic_media:
-  path: dynamic_media/{media}
-  controller: App\Controller\MediaController::generate
+add_notes:
+  path: save_note/{note}
+  methods: [POST]
+  controller: App\Controller\MediaController::saveNotesAction

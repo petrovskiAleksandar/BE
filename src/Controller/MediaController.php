@@ -7,12 +7,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class MediaController extends AbstractController {
     public function index()
     {
-        return $this->render('/index.html.twig');
+        $content = ['content' => 'some content'];
+
+        return $this->render('/index.html.twig', $content);
     }
 
-    public function generate ($media)
+    public function list ($media)
     {
         $content = ['content' => $media];
+        return $this->json($content);
+    }
+
+    public function saveNotesAction ($note)
+    {
+        $content = ['content' => $note];
         return $this->json($content);
     }
 }

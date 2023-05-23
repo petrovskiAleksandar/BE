@@ -1,7 +1,9 @@
 {% block main_container %}
+{{ dump() }}
     <body>
+        <input id="noteText" type="text">
         <button onclick="handleClick()">
-            Click!
+            Add note!
         </button>
     </body>
 
@@ -9,10 +11,20 @@
 
 {% block javascripts %}
     <script>
+        let inputText = '';
+        let notes = [];
+
+        document.getElementById('noteText').addEventListener('input', (e) => {
+            inputText = e.target.value;
+        })
+
         async function handleClick() {
-            console.log('clicked');
-            const res = await fetch('/dynamic_media/post');
+            console.log('clicked', inputText);
+            const res = await fetch('save_note/'+ inputText, {
+                method: 'POST'
+            });
             const resValue = await res.json();
+            notes.push()
             console.log(resValue);
         }
     </script>
