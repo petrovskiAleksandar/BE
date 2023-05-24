@@ -1,12 +1,12 @@
 index:
    path: /
-   controller: App\Controller\MediaController::index
+   controller: App\Controller\NotesController::index
 
 list_notes:
   path: list_media
-  controller: App\Controller\MediaController::list
+  controller: App\Controller\NotesController::list
 
 add_notes:
   path: save_note/{note}
   methods: [POST]
-  controller: App\Controller\MediaController::saveNotesAction
+  controller: App\Controller\NotesController::saveNotesAction
