@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class MediaController extends AbstractController {
+class NotesController extends AbstractController {
     public function index()
     {
         $content = ['content' => 'some content'];
